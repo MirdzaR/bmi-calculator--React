@@ -45,18 +45,6 @@ const BMI = () =>{
   }
 
   // update labels based on system used
-  // const setTextValue = () => {
-  //   if(system === 'metric') {
-  //     setHeightText('Height (cm): ');
-  //     setWeightText('Weight (kg): ');
-  //   }
-  //   else{
-  //     setHeightText('Height (in): ');
-  //     setWeightText('Weight (lbs): ');
-  //   }
-  // }
-
-  // run setTextValue every time system changes
   useEffect(() => {
     if(system === 'metric') {
       setHeightText('Height (cm): ');
@@ -73,6 +61,7 @@ const BMI = () =>{
       <div className="container">
         <h1 className="title"> BMI Calculator </h1>
 
+        {/* form */}
         <form onSubmit={calcBMI}>
           <div className='bmi-radio-btn'>
             <br />
@@ -106,13 +95,13 @@ const BMI = () =>{
 
           <button type="submit" className="btn"> Calculate </button>
           <button type="reset" className="btn btn-reset" onClick={reload}> Reset </button>
-
         </form>
 
+        {/* result */}
         <div className="result">
-            <h3> Your BMI is: {bmi} </h3>
-            <p> {msg} </p>
-          </div>
+          <h3> Your BMI is: {bmi} </h3>
+          <p> {msg} </p>
+        </div>
       </div>
     </div>
   )
